@@ -11,7 +11,7 @@ gpu_mem_1024=100
 # Display
 # Connected using SPI
 dtparam=spi=on
-dtoverlay=ssd1322-spi
+#dtoverlay=ssd1322-spi
 dtparam=rotate=180
 
 # Soundcard
