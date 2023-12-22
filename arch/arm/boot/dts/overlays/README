@@ -801,11 +801,6 @@ Load:   dtoverlay=balena-fin
 Params: <None>
 
 
-Name:   bmp085_i2c-sensor
-Info:   This overlay is now deprecated - see i2c-sensor
-Load:   <Deprecated>
-
-
 Name:   camera-mux-2port
 Info:   Configures a 2 port camera multiplexer
         Note that currently ALL IMX290 modules share a common clock, therefore
@@ -900,6 +895,11 @@ Params: cam0-arducam-64mp       Select Arducam64MP for camera on port 0
         cam3-imx290-clk-freq    Set clock frequency for an IMX290 on port 3
 
         cam0                    Connect the mux to CAM0 port (default is CAM1)
+
+Name:   bq27441
+Info:   TI BQ27441 battery management
+Load:   dtoverlay=bq27441
+Params: <None>
 
 
 Name:   cap1106
@@ -3190,6 +3190,12 @@ Info:   This overlay has been deprecated - use "dtoverlay=i2c-sensor,mpu6050"
 Load:   <Deprecated>
 
 
+Name:   monome-snd
+Info:   Configures the Monome audio card
+Load:   dtoverlay=monome-snd
+Params: <None>
+
+
 Name:   mz61581
 Info:   MZ61581 display by Tontec
 Load:   dtoverlay=mz61581,<param>=<val>
@@ -3219,6 +3225,11 @@ Params: rotation                Mounting rotation of the camera sensor (0 or
                                 configuring the sensor (default on)
         cam0                    Adopt the default configuration for CAM0 on a
                                 Compute Module (CSI0, i2c_vc, and cam0_reg).
+
+Name:   norns-buttons-encoders.dts
+Info:   Norns buttons and encoders
+Load:   dtoverlay=norns-buttons-encoders
+Params: <None>
 
 
 Name:   ov5647
@@ -4428,6 +4439,12 @@ Params: speed                   SPI bus speed (default 10000000)
         height                  Display height (32 or 64; default 64)
         inverted                Set this if display is inverted and mirrored.
                                 (default=not set)
+
+
+Name:   ssd1322-spi
+Info:   Enable ssd1322 OLED display
+Load:   dtoverlay=ssd1322-spi
+Params: <None>
 
 
 Name:   ssd1331-spi

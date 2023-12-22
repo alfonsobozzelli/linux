@@ -34,6 +34,7 @@ dtbo-$(CONFIG_ARCH_BCM2835) += \
 	audiosense-pi.dtbo \
 	audremap.dtbo \
 	balena-fin.dtbo \
+ 	bq27441.dtbo \
 	camera-mux-2port.dtbo \
 	camera-mux-4port.dtbo \
 	cap1106.dtbo \
@@ -171,8 +172,11 @@ dtbo-$(CONFIG_ARCH_BCM2835) += \
 	mipi-dbi-spi.dtbo \
 	mlx90640.dtbo \
 	mmc.dtbo \
+	monome-snd-4270.dtbo \
+ 	monome-snd-4271.dtbo \
 	mpu6050.dtbo \
 	mz61581.dtbo \
+	norns-buttons-encoders.dtbo \
 	ov2311.dtbo \
 	ov5647.dtbo \
 	ov64a40.dtbo \
@@ -261,6 +265,7 @@ dtbo-$(CONFIG_ARCH_BCM2835) += \
 	spi6-1cs.dtbo \
 	spi6-2cs.dtbo \
 	ssd1306.dtbo \
+	ssd1322-spi.dtbo \
 	ssd1306-spi.dtbo \
 	ssd1331-spi.dtbo \
 	ssd1351-spi.dtbo \
