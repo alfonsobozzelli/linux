@@ -1,0 +1,55 @@
+name: build-image
+
+on:
+  push:
+    branches:
+      - norns-*
+      - feature/*
+      - fix/*
+
+    # Publish `v1.2.3` tags as releases.
+    tags:
+      - norns-kernel_*
+
+  # Run tests for any PRs.
+  pull_request:
+
+  # Allow triggering manually
+  workflow_dispatch:
+
+jobs:
+  build-rpi3:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Authenticate
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+
+      - name: Build
+        run: |
+          ./build-kernel.sh norns
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: kernel-image-rpi3
+          path: build/kernel-*
+
+  build-rpi4:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Authenticate
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+
+      - name: Build
+        run: |
+          ./build-kernel.sh nornsv7l
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: kernel-image-rpi4
+          path: build/kernel-*
